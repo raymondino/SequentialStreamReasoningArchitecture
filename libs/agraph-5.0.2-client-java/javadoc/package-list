@@ -1,0 +1,6 @@
+com.franz.agraph.jena
+com.franz.agraph.pool
+com.franz.agraph.repository
+com.franz.agraph.repository.config
+com.franz.openrdf.rio.nquads
+com.franz.util
