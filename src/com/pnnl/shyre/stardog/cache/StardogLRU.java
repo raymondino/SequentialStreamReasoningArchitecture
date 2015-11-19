@@ -87,8 +87,8 @@ public class StardogLRU {
 	public void run(String backgroundOntologyPath)
 			throws IOException, TupleQueryResultHandlerException, QueryEvaluationException, UnsupportedQueryResultFormatException {
 		System.out.println("[INFO] Stardog LRU cache starts: cache size = " + this.size);
-		System.out.println("                         evict amount = " + this.evictAmount);
-		System.out.println("                         server url = " + this.serverURL);
+		System.out.println("                                 evict amount = " + this.evictAmount);
+		System.out.println("                                 server url = " + this.serverURL);
 		
 		String benchmarkFilePath = "files/stardoglru/sdlru_bench_"+ size +"_"+this.evictAmount+".csv";
 		this.metricRecorder = new PrintWriter(benchmarkFilePath, "UTF-8");
@@ -97,6 +97,7 @@ public class StardogLRU {
 		this.loadBkOnto(this.client, backgroundOntologyPath);
 		
 		this.loadCacheToFull();
+		System.out.println("[INFO] Cache is full, now rocking & roll");
 		
 		boolean flag = true;
 		while(flag) {			
@@ -211,7 +212,6 @@ public class StardogLRU {
 			double recall = (double) counter / this.groundTruth.size();
 			this.metricRecorder.print(precision + ", " + recall + ", " + 2*precision*recall/(precision + recall) + ", " );
 		}
-		this.metricRecorder.flush();
 	}
 	
 	// Evict evictAmount graphs using SPARQL v1.1 update drop argument
@@ -225,7 +225,7 @@ public class StardogLRU {
 			GraphIdCounterPair graph = this.cacheContentOfGraphIds.poll();
 			queryString = queryString + "drop graph <" + graph.graphId + ">;"; // need to test the format of the graphID
 		}
-//		System.out.println("query string: " + queryString);// for display only
+		System.out.println("query string: " + queryString);// for display only
 		this.client.getAConn().update(queryString.substring(0, queryString.length() - 1)).execute();
 	}
 	

@@ -89,6 +89,7 @@ public class StardogFIFO {
 		this.loadBkOnto(this.client, backgroundOntologyPath);
 		
 		this.loadCacheToFull();
+		System.out.println("[INFO] Cache is full, now rocking & roll");
 		
 		boolean flag = true;
 		while(flag) {			
@@ -199,7 +200,6 @@ public class StardogFIFO {
 			double recall = (double) counter / this.groundTruth.size();
 			this.metricRecorder.print(precision + ", " + recall + ", " + 2*precision*recall/(precision + recall) + ", " );
 		}
-		this.metricRecorder.flush();
 	}
 		
 	// Evict evictAmount graphs using SPARQL v1.1 update drop argument
@@ -213,7 +213,7 @@ public class StardogFIFO {
 			String graph = this.cacheContentOfGraphIds.remove();
 			queryString = queryString + "drop graph <" + graph + ">;";
 		}		
-//		System.out.println(queryString);// for display only
+		System.out.println(queryString);// for display only
 		this.client.getAConn().update(queryString.substring(0, queryString.length() - 1)).execute();
 	}
 	
