@@ -1,0 +1,2 @@
+sparql, precision, recall, fmeasure, explain, evict, memory
+26, 1.0, 0.021274639599882315, 0.04163520302578341, 0, 5559, 28
