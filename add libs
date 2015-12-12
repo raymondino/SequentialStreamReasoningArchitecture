@@ -1,5 +1,0 @@
-for stardog, add clients/api, clients/snarl .
-for allegrograph, add all of its api
-
-but, it seems that there will be something contradictory when using these two libs together. 
-recommand to use them seperately. 
