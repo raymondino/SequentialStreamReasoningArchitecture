@@ -4,6 +4,7 @@ This folder contains the SSRA benchmark results.
 The architecture has been implemented by two off-the-shelf triplestores, [Stardog](http://stardog.com/) and [Allegrograph](http://franz.com/). 
 
 The goal of this architecture is to provide empirical and experimental evidence to 
+
 1. build a stream reasoning system
 2. explore how semantic importance can influence the streaming window management
 3. validate the hypothesis that different window management strategies employed in the window can yield different results
