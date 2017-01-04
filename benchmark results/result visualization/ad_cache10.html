@@ -1,0 +1,89 @@
+ <html>
+  <head>
+    <script type="text/javascript"
+          src="https://www.google.com/jsapi?autoload={
+            'modules':[{
+              'name':'visualization',
+              'version':'1',
+              'packages':['corechart']
+            }]
+          }"></script>
+
+    <script type="text/javascript">
+      google.setOnLoadCallback(drawChart);
+
+
+      function drawChart() {
+        // data1 for query
+        var data1 = google.visualization.arrayToDataTable([
+          ['Eviction Amount','SD_FEFO_1','SD_FEFO_10','SDFEFO_100','AD_FEFO_1','AD_FEFO_10','ADFEFO_100','SM_FEFO_1','SM_FEFO_10','SMFEFO_100'],
+          ['25%', 5,6,8,38,11,10,8,5,11],
+          ['50%', 5,5,7,14,13,10,5,5,6],
+          ['75%', 5,5,6,13,10,12,5,5,6],
+         ['100%', 4,5,6,16,15,11,4,4,5]
+        ]);
+
+        // data2 for f-measure
+        var data2 = google.visualization.arrayToDataTable([
+          ['Eviction Amount','SD_FEFO_1','SD_FEFO_10','SDFEFO_100','AD_FEFO_1','AD_FEFO_10','ADFEFO_100','SM_FEFO_1','SM_FEFO_10','SMFEFO_100'],
+          ['25%', 7.354833964623248E-5, 3.208973986506339E-4, 0.0017636338997646952,7.354833964623248E-5, 2.540485474793719E-4, 0.0015833902550676717,1.3372425390224087E-5, 2.540485474251416E-4, 0.0018958091156587062],
+          ['50%', 4.680299712402546E-5, 3.944226307191311E-4, 0.0016020901292605936,2.0058638085336132E-5,4.144724198391938E-4, 0.0016100732307049647,6.017591425600839E-5,  4.211542084854552E-4, 0.0014992640346936147],
+          ['75%', 2.6744850780448174E-5,2.339923678858692E-4, 0.0016461175950904627,4.680299712402546E-5, 3.3426343291667094E-4,0.001423035696060679 ,2.6744850780448174E-5, 3.208964155467677E-4, 0.0015432806958039689],
+         ['100%', 3.3431063475560215E-5,2.3398745160730717E-4,0.0016020555883394095,3.3431063475560215E-5,2.3398892623599526E-4,0.0014364719180255231,3.3431063475560215E-5, 2.2730468050787868E-4,0.0013080849006446532]
+        ]);
+
+        // data3 for explain
+        //var data3 = google.visualization.arrayToDataTable([
+        //  ['Eviction Amount','SD_LRU_1','SD_LRU_10','SD_LRU_100','SD_LFU_1','SD_LFU_10','SD_LFU_100'],
+        //  ['25%', 2978,9232, 42485,3283,8303, 46475],
+        //  ['50%', 2099,10345,33534,3411,11505,42097],
+        // ['75%', 1488,8692, 31163,2503,12367,36011],
+        //]); 
+
+        // data4 for evict
+        var data4 = google.visualization.arrayToDataTable([
+          ['Eviction Amount','SD_FEFO_1','SD_FEFO_10','SDFEFO_100','AD_FEFO_1','AD_FEFO_10','ADFEFO_100','SM_FEFO_1','SM_FEFO_10','SMFEFO_100'],
+          ['25%',12,9, 17,74,58, 76, 9, 6, 11],
+          ['50%',12,11,18,58,29, 78, 9, 8, 16],
+          ['75%',13,11,21,58,115,78, 9, 9, 20],
+         ['100%',14,13,26,87,101,78,10,12, 28]
+        ]); 
+
+        // data5 for memory
+        var data5 = google.visualization.arrayToDataTable([
+          ['Eviction Amount','SD_FEFO_1','SD_FEFO_10','SDFEFO_100','AD_FEFO_1','AD_FEFO_10','ADFEFO_100','SM_FEFO_1','SM_FEFO_10','SMFEFO_100'],
+          ['25%',35, 33,70,15,110,73,25, 43,71],
+          ['50%',102,26,22,23,106,62,58, 31,40],
+          ['75%',96, 24,26,18, 55,54,50, 27,28],
+         ['100%',66, 35,25,32, 95,41,22, 28,28]
+        ]); 
+
+        var options = {
+          title: 'SD, SM and AD F-measure under cache size = 10 and different streaming data configurations',
+          curveType: 'function',
+          legend: { position: 'right' },
+          pointSize: 20,
+          series: {
+		      0: { pointShape: { type: 'star', sides: 3, dent: 0.1 } },
+              1: { pointShape: { type: 'star', sides: 3, dent: 0.2 } },
+              2: { pointShape: { type: 'star', sides: 3, dent: 0.3 } },
+              3: { pointShape: { type: 'star', sides: 4, dent: 0.1 } },
+              4: { pointShape: { type: 'star', sides: 4, dent: 0.2 } },
+              5: { pointShape: { type: 'star', sides: 4, dent: 0.3 } },
+              6: { pointShape: { type: 'star', sides: 5, dent: 0.1 } },
+              7: { pointShape: { type: 'star', sides: 5, dent: 0.2 } },
+              8: { pointShape: { type: 'star', sides: 5, dent: 0.3 } },
+          }
+
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data4, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+  </body>
+</html>

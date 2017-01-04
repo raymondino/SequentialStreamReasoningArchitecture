@@ -1,4 +1,7 @@
-# CacheStreamReasoning
+# srra
+srra stands for Sequential Stream Reasoning Architecture
+
+
 A stream reasoning system prototype with caching algorithms (FIFO, LRU &amp; LFU) 
 This system leverages Java client API from AllegroGraph and Stardog. 
 The dataset is generated from LUBM test, with a given univ-bench.owl ontology and generated ABox data. 

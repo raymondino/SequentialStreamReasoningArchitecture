@@ -1,2 +1,5 @@
-Abox data: 6031109 lines
-ground truth: 27192 lines
+The empty folder called "agFEFOdisk" will contain benchmark results when the system runs.
+
+In this experiment, we have generated Abox data of 6031109 triples using LUBM, and ground truth of 27192.
+
+We have streamed the generated data as stream. 
