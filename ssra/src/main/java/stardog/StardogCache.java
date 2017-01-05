@@ -1,3 +1,7 @@
+/*
+ * Tne name "Cache" is not a good one. We should have called it a "window"
+ */
+
 package stardog;
 
 import java.io.*;
@@ -24,7 +28,7 @@ import com.complexible.stardog.reasoning.Proof;
 import com.complexible.stardog.reasoning.ProofType;
 import utils.GraphIdCounterPair;
 
-public class Cache {
+public class StardogCache {
 	// cache size
 	private int size; 
 	// a incremental value to label different graphs
@@ -68,7 +72,7 @@ public class Cache {
 	// to read data from file for stream simulation
 	private BufferedReader br; 
 	
-	public Cache(int numberOfTriples_, int totalEvictTimes_, 
+	public StardogCache(int numberOfTriples_, int totalEvictTimes_, 
 			HashSet<String> groundTruth_, String mode_, String cacheType_,
 			String serverURL_, String username_, String password_) 
 			throws IOException {

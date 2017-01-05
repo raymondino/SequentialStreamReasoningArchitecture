@@ -14,38 +14,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
  
-<plugin>
-    <artifactId>maven-assembly-plugin</artifactId>
-    <version>2.2.1</version>
-    <configuration>
-        <descriptors>
-            <descriptor>assembly.xml</descriptor>
-        </descriptors>
-        <!--descriptorRefs>         
-            <descriptorRef>jar-with-dependencies</descriptorRef>       
-        </descriptorRefs-->       
-        <archive>         
-            <manifest>           
-                <mainClass>org.apache.lucene.Search</mainClass>         
-            </manifest>       
-
-            <manifestEntries>
-                <PCD-Version>${GIT_COMMIT}</PCD-Version>
-            </manifestEntries>
-        </archive> 
-    </configuration>
-
-    <executions>
-        <execution>
-            <id>make-assembly</id>
-            <phase>package</phase>
-            <goals>
-                <goal>single</goal>
-            </goals>
-        </execution>
-    </executions>
-</plugin> 
-  
   <repositories>
     <repository>
      <id>stardog-public</id>
@@ -95,13 +63,80 @@
       <artifactId>stardog-gremlin</artifactId>
       <version>4.2.2</version>
       <type>jar</type>
-    </dependency>    
-	<dependency>
-      <groupId>com.franz</groupId>
+    </dependency> 
+<!-- allegrograph local dependencies, too many to add one by one...   
+    <dependency>
+  	  <groupId>com.franz</groupId>
       <artifactId>agraph-java-client</artifactId>
       <version>6.1.4</version>
-      <scope>system</scope>
-    <systemPath>${project.basedir}/resource/lib/*.jar</systemPath>
-	</dependency>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>jena-arq</artifactId>
+      <version>2.11.1</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>jena-core</artifactId>
+      <version>2.11.1</version>
+      <type>jar</type>
+    </dependency>    
+    <dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>jena-iri</artifactId>
+      <version>1.0.1</version>
+      <type>jar</type>
+    </dependency>    
+    <dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>xercesImpl</artifactId>
+      <version>2.10.0</version>
+      <type>jar</type>
+    </dependency>    
+   	<dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>xml-apis</artifactId>
+      <version>1.4.01</version>
+      <type>jar</type>
+    </dependency>    
+   	<dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.3</version>
+      <type>jar</type>
+    </dependency>    
+   	<dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>commons-httpclient</artifactId>
+      <version>3.1</version>
+      <type>jar</type>
+    </dependency>    
+   	<dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>openrdf-sesame</artifactId>
+      <version>2.7.11</version>
+      <type>jar</type>
+    </dependency>    
+   	<dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.4</version>
+      <type>jar</type>
+    </dependency> 
+   	<dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>commons-pool</artifactId>
+      <version>1.5.6</version>
+      <type>jar</type>
+    </dependency> 
+   	<dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>json</artifactId>
+      <version>1.0.0</version>
+      <type>jar</type>
+    </dependency> 
+-->    
   </dependencies>
 </project>

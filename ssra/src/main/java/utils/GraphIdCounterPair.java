@@ -15,9 +15,21 @@ public class GraphIdCounterPair implements Comparable<GraphIdCounterPair>{
 	public LocalTime arrivalTime;
 	public LocalTime expirationTime;
 	
-	// this constructor is for FEFO
-	public GraphIdCounterPair (String id, int count, 
-			LocalTime arrivalTime_, String mode_) {
+	// this constructor is for allegrograph FEFO
+	public GraphIdCounterPair (String id, LocalTime arrivalTime_) {
+		this.graphId = id;
+		this.arrivalTime = arrivalTime_;		
+
+		// assign randomly the expiration time for each graph 
+		// the expiration time is after the arrival time within a range of 
+		// 1 minute to 25000 seconds
+		Random rn = new Random();
+		expirationTime = arrivalTime.plusSeconds(rn.nextInt(25000)+1);
+		mode = "FEFO";
+	}	
+	
+	// this constructor is for stardog FEFO
+	public GraphIdCounterPair (String id, int count, LocalTime arrivalTime_, String mode_) {
 		this.graphId = id;
 		this.count = count;
 		this.arrivalTime = arrivalTime_;		
@@ -33,8 +45,7 @@ public class GraphIdCounterPair implements Comparable<GraphIdCounterPair>{
 	}
 	
 	// this constructor is for LRU & LFU
-	public GraphIdCounterPair (String id, int count, 
-			LocalTime arrivalTime_, LocalTime expirationTime_, String mode_) {
+	public GraphIdCounterPair (String id, int count, LocalTime arrivalTime_, LocalTime expirationTime_, String mode_) {
 		this.graphId = id;
 		this.count = count;
 		this.arrivalTime = arrivalTime_;	
