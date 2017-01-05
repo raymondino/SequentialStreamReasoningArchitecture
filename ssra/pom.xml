@@ -13,7 +13,46 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+ 
+<plugin>
+    <artifactId>maven-assembly-plugin</artifactId>
+    <version>2.2.1</version>
+    <configuration>
+        <descriptors>
+            <descriptor>assembly.xml</descriptor>
+        </descriptors>
+        <!--descriptorRefs>         
+            <descriptorRef>jar-with-dependencies</descriptorRef>       
+        </descriptorRefs-->       
+        <archive>         
+            <manifest>           
+                <mainClass>org.apache.lucene.Search</mainClass>         
+            </manifest>       
 
+            <manifestEntries>
+                <PCD-Version>${GIT_COMMIT}</PCD-Version>
+            </manifestEntries>
+        </archive> 
+    </configuration>
+
+    <executions>
+        <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+                <goal>single</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin> 
+  
+  <repositories>
+    <repository>
+     <id>stardog-public</id>
+     <url>http://maven.stardog.com</url>
+    </repository>
+  </repositories>
+    
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -21,5 +60,48 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+  	  <groupId>com.complexible.stardog</groupId>
+      <artifactId>client-snarl</artifactId>
+      <version>4.2.2</version>
+      <type>pom</type>
+    </dependency>      
+    <dependency>
+  	  <groupId>com.complexible.stardog</groupId>
+      <artifactId>client-http</artifactId>
+      <version>4.2.2</version>
+      <type>pom</type>
+    </dependency>
+    <dependency>
+  	  <groupId>com.complexible.stardog</groupId>
+      <artifactId>server</artifactId>
+      <version>4.2.2</version>
+      <type>pom</type>
+    </dependency>     
+    <dependency>
+  	  <groupId>com.complexible.stardog.sesame</groupId>
+      <artifactId>stardog-sesame-core</artifactId>
+      <version>4.2.2</version>
+      <type>jar</type>
+    </dependency> 
+    <dependency>
+  	  <groupId>com.complexible.stardog.jena</groupId>
+      <artifactId>stardog-jena</artifactId>
+      <version>4.2.2</version>
+      <type>jar</type>
+    </dependency> 
+    <dependency>
+  	  <groupId>com.complexible.stardog.gremlin</groupId>
+      <artifactId>stardog-gremlin</artifactId>
+      <version>4.2.2</version>
+      <type>jar</type>
+    </dependency>    
+	<dependency>
+      <groupId>com.franz</groupId>
+      <artifactId>agraph-java-client</artifactId>
+      <version>6.1.4</version>
+      <scope>system</scope>
+    <systemPath>${project.basedir}/resource/lib/*.jar</systemPath>
+	</dependency>
   </dependencies>
 </project>
