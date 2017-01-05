@@ -64,7 +64,7 @@
       <version>4.2.2</version>
       <type>jar</type>
     </dependency> 
-<!-- allegrograph local dependencies, too many to add one by one...   
+        
     <dependency>
   	  <groupId>com.franz</groupId>
       <artifactId>agraph-java-client</artifactId>
@@ -115,10 +115,22 @@
     </dependency>    
    	<dependency>
   	  <groupId>com.franz</groupId>
+      <artifactId>commons-httpclient-src</artifactId>
+      <version>3.1</version>
+      <type>zip</type>
+    </dependency> 
+   	<dependency>
+  	  <groupId>com.franz</groupId>
       <artifactId>openrdf-sesame</artifactId>
       <version>2.7.11</version>
       <type>jar</type>
     </dependency>    
+   	<dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>openrdf-sesame-src</artifactId>
+      <version>2.7.11</version>
+      <type>jar</type>
+    </dependency>  
    	<dependency>
   	  <groupId>com.franz</groupId>
       <artifactId>commons-io</artifactId>
@@ -137,6 +149,83 @@
       <version>1.0.0</version>
       <type>jar</type>
     </dependency> 
--->    
+   	<dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.1.1</version>
+      <type>jar</type>
+    </dependency> 
+   	<dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>commons-logging-src</artifactId>
+      <version>1.1.1</version>
+      <type>jar</type>
+    </dependency> 
+   	<dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.16</version>
+      <type>jar</type>
+    </dependency> 
+   	<dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>slf4j-jcl</artifactId>
+      <version>1.6.1</version>
+      <type>jar</type>
+    </dependency> 
+   	<dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>slf4j-jcl-src</artifactId>
+      <version>1.6.1</version>
+      <type>jar</type>
+    </dependency>    
+   	<dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>1.6.4</version>
+      <type>jar</type>
+    </dependency> 
+   	<dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.6.1</version>
+      <type>jar</type>
+    </dependency> 
+   	<dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>slf4j-api-src</artifactId>
+      <version>1.6.1</version>
+      <type>jar</type>
+    </dependency> 
+   	<dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.6.4</version>
+      <type>jar</type>
+    </dependency> 
+   	<dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>agraph-src</artifactId>
+      <version>6.1.4</version>
+      <type>jar</type>
+    </dependency> 
+   	<dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>jena-arq-src</artifactId>
+      <version>2.11.1</version>
+      <type>jar</type>
+    </dependency> 
+   	<dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>jena-core-src</artifactId>
+      <version>2.11.1</version>
+      <type>jar</type>
+    </dependency> 
+   	<dependency>
+  	  <groupId>com.franz</groupId>
+      <artifactId>jena-iri-src</artifactId>
+      <version>1.0.1</version>
+      <type>jar</type>
+    </dependency> 
   </dependencies>
 </project>
