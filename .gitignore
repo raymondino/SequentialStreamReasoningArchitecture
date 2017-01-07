@@ -3,3 +3,5 @@ ssra/target/
 ssra/.settings/
 ssra/.project
 ssr/bin/
+AllegroGraphCache/build/
+StardogCache/build/
