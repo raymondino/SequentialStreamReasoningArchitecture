@@ -4,7 +4,9 @@ Sequential Stream Reasoning Architecture
 
 ## Introduction
 SSRA is proposed with the purpose of deploying [semantic importance](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=d_juGHAAAAAJ&sortby=pubdate&citation_for_view=d_juGHAAAAAJ:M3NEmzRMIkIC) into typical stream reasoning systems to enable flexible window management strategies. The architecture diagram is shown in the following picture:
+
 ![alt text](http://i.imgur.com/cZjtwc5.png "SSRA archictecture diagram")
+
 For detailed information, please refer to our paper: [Towards A Cache-Enabled, Order-Aware, Ontology-Based Stream Reasoning Framework](http://events.linkeddata.org/ldow2016/papers/LDOW2016_paper_13.pdf)
 
 ## Installation
